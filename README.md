@@ -4,6 +4,15 @@ Nama: M. Putra Mulya Pratama
 NIM: 021240083P  
 Gemini Link: https://gemini.google.com/share/c62ba0865790
 
+## 1. Analisis Masalah
+## 2. Kebutuhan Fungsional
+## 3. Kebutuhan Non-Fungsional
+## 4. User Stories
+## 5. Alur Proses Sistem
+## 6. Desain Basis Data
+## 7. Daftar Modul / Tampilan
+## 8. Refleksi Penggunaan Gemini
+
 ---
 
 ## 1. Analisis Masalah
@@ -78,15 +87,17 @@ Sistem wajib menyediakan fitur-fitur utama berikut:
 
 ## 5. Alur Proses Sistem
 
-1. Mahasiswa masuk ke sistem menggunakan NIM.
-2. Mahasiswa melihat jadwal dokter dan memilih slot yang kosong.
-3. Sistem memvalidasi ketersediaan kuota.
-4. Nomor antrean diterbitkan secara otomatis.
-5. Mahasiswa memantau antrean secara daring.
-6. Staf memanggil pasien dan mengubah status antrean menjadi "Dipanggil".
-7. Dokter melakukan pemeriksaan pasien.
-8. Setelah selesai, staf mengubah status antrean menjadi "Selesai".
-9. Data kunjungan otomatis masuk ke sistem laporan.
+1. Mahasiswa Masuk & Pesan: Mahasiswa masuk ke sistem menggunakan NIM, melihat jadwal dokter, memilih slot yang kosong, dan melakukan pendaftaran janji temu.
+
+2. Validasi Kuota: Sistem memeriksa ketersediaan kuota. Jika kuota aman, kuota akan berkurang dan nomor antrean otomatis diterbitkan dengan status awal "Terdaftar".
+
+3. Pantau Antrean: Pada hari kunjungan, mahasiswa memantau pergerakan nomor antrean secara daring dari tempat masing-masing untuk mengestimasi waktu kedatangan.
+
+4. Pemanggilan Pasien: Staf klinik memanggil nomor antrean di lokasi dan mengubah status di sistem menjadi "Dipanggil".
+
+5. Pelayanan & Selesai: Dokter memeriksa mahasiswa. Setelah pelayanan medis selesai, staf klinik mengubah status antrean menjadi "Selesai".
+
+6. Pencatatan Laporan: Data janji temu yang sudah selesai secara otomatis masuk ke rekapitulasi sistem untuk menu laporan berkala staf.
 
 ---
 
@@ -153,10 +164,7 @@ Pintu masuk aman bagi pengguna untuk mengakses sistem berdasarkan hak akses masi
 Pasien/Mahasiswa dan Staf Klinik.
 
 **Fitur Utama:**  
-- Form input NIM/Username
-- Form input kata sandi
-- Tombol masuk sistem
-- Tombol daftar akun mahasiswa baru
+Form input NIM/Username, form input kata sandi, tombol masuk sistem, dan tombol daftar akun bagi mahasiswa baru.
 
 ### 2. Dashboard Pasien / Mahasiswa
 
@@ -167,9 +175,7 @@ Halaman utama mahasiswa untuk melihat ringkasan aktivitas janji temu mereka.
 Pasien/Mahasiswa.
 
 **Fitur Utama:**  
-- Kartu status janji temu aktif
-- Riwayat kunjungan
-- Tombol pendaftaran janji temu
+Kartu status janji temu aktif (menampilkan nama dokter, tanggal, nomor antrean, dan status), riwayat kunjungan lampau, dan tombol pintas menuju pendaftaran janji temu.
 
 ### 3. Halaman Informasi & Pencarian Jadwal Dokter
 
@@ -180,10 +186,7 @@ Menyediakan informasi waktu praktik dokter secara aktual agar mahasiswa dapat me
 Pasien/Mahasiswa dan Staf Klinik.
 
 **Fitur Utama:**  
-- Filter pencarian dokter
-- Filter hari praktik
-- Tabel jadwal dokter
-- Informasi sisa kuota
+Filter pencarian berdasarkan nama dokter atau hari praktik, serta tabel jadwal yang dilengkapi indikator sisa kuota harian.
 
 ### 4. Halaman Pendaftaran Janji Temu (Booking)
 
@@ -194,10 +197,7 @@ Memfasilitasi mahasiswa untuk melakukan reservasi kuota kunjungan secara mandiri
 Pasien/Mahasiswa.
 
 **Fitur Utama:**  
-- Kalender pemilihan tanggal
-- Pilihan jadwal dokter
-- Ringkasan pendaftaran
-- Tombol konfirmasi
+Kalender interaktif pemilihan tanggal, menu pilihan jadwal dokter yang aktif, ringkasan detail pendaftaran, dan tombol konfirmasi untuk menerbitkan nomor antrean.
 
 ### 5. Halaman Pantauan Antrean (Monitor Digital)
 
@@ -208,10 +208,7 @@ Menampilkan pergerakan antrean pasien secara langsung.
 Pasien/Mahasiswa, Staf Klinik, dan Dokter.
 
 **Fitur Utama:**  
-- Nomor antrean berjalan
-- Daftar antrean tunggu
-- Informasi dokter
-- Waktu pembaruan antrean
+Tampilan besar nomor antrean yang sedang dipanggil per dokter, daftar nomor antrean tunggu, indikator waktu pembaruan terakhir, dan tata letak responsif untuk TV ruang tunggu maupun ponsel.
 
 ### 6. Dashboard Admin & Manajemen Jadwal
 
@@ -222,10 +219,7 @@ Pusat kendali operasional klinik bagi staf.
 Staf Klinik.
 
 **Fitur Utama:**  
-- Kelola jadwal dokter
-- Tombol panggil antrean
-- Tombol selesai antrean
-- Pencarian pasien harian
+Panel kendali status antrean harian (tombol Panggil dan Selesai), formulir tambah/ubah/hapus slot jadwal dan kuota dokter, serta pencarian cepat daftar pasien hari berjalan.
 
 ### 7. Halaman Data Pasien & Riwayat Kunjungan
 
@@ -236,9 +230,7 @@ Tempat penyimpanan data administratif mahasiswa yang terdaftar.
 Staf Klinik dan Dokter.
 
 **Fitur Utama:**  
-- Data pasien
-- Pencarian pasien
-- Riwayat kunjungan
+Tabel profil mahasiswa (NIM, Nama, Telepon), bilah pencarian pasien, dan tombol detail untuk melihat rekap riwayat tanggal kunjungan pasien terkait tanpa rekam medis.
 
 ### 8. Halaman Laporan Kunjungan Dasar
 
@@ -249,19 +241,23 @@ Menyajikan rekapitulasi data kunjungan pasien.
 Staf Klinik.
 
 **Fitur Utama:**  
-- Filter laporan
-- Grafik kunjungan
-- Rekap total pasien
-- Tombol unduh laporan
+Filter laporan berdasarkan rentang tanggal, grafik tren kunjungan, tabel rekapitulasi total pasien per dokter, dan tombol unduh laporan berbentuk dokumen fisik.
 
+**Desain Antarmuka Terintegrasi**
+https://gemini.google.com/share/96bc5c410deb
 ---
 
 ## 8. Refleksi Penggunaan Gemini
 
-Proses perancangan dokumen analisis kebutuhan ini dibantu oleh Gemini melalui beberapa tahapan iterasi. Gemini membantu menyusun struktur analisis, menjaga konsistensi antarbagian, dan mempercepat proses penyusunan kebutuhan sistem.
+Proses perancangan dokumen analisis kebutuhan ini dibantu oleh Gemini melalui beberapa tahapan iterasi. Berikut adalah poin refleksi terkait kolaborasi yang dilakukan:
 
-Namun, beberapa hasil awal masih terlalu umum dan sempat melebar dari fokus sistem appointment klinik kampus. Oleh karena itu, prompt diperbaiki dan beberapa bagian disesuaikan kembali secara manual agar hasil lebih relevan, natural, dan tetap sesuai dengan batasan sistem.
+- Kemudahan dalam Eksplorasi Struktur: Gemini mempermudah pembentukan kerangka berpikir yang runut. Proses penerjemahan dari masalah nyata di lapangan menjadi kebutuhan fungsional dan teknis (seperti tabel basis data) dapat dilakukan dengan cepat dan terstruktur.
 
+- Penyelarasan Logika Sistem: Melalui evaluasi bertahap, Gemini membantu menjaga konsistensi antar-bagian. Sebagai contoh, memastikan status antrean yang ada di alur proses sinkron dengan tipe data pada desain basis data dan fungsionalitas tombol pada rancangan modul tampilan.
+
+- Lokalisasi Istilah: Salah satu kendala awal adalah penggunaan istilah asing yang terlalu teknis. Dengan instruksi yang tepat, Gemini mampu menyesuaikan gaya bahasa menjadi lebih natural, formal, dan menggunakan padanan kata bahasa Indonesia yang cocok untuk konteks administrasi kampus tanpa mengurangi nilai profesionalitasnya.
+
+- Batasan yang Terjaga: Penggunaan AI sangat membantu dalam membatasi ruang lingkup analisis. Ketika sistem berisiko melebar ke arah rekam medis atau sistem rumah sakit yang rumit, proses pemurnian instruksi berhasil memaksa sistem tetap berada pada koridor janji temu dan antrean sederhana sesuai kebutuhan awal klinik kampus.
 
 
 
