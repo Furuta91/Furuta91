@@ -4,14 +4,14 @@ Nama: M. Putra Mulya Pratama
 NIM: 021240083P  
 Gemini Link: https://gemini.google.com/share/c62ba0865790
 
-## 1. Analisis Masalah
-## 2. Kebutuhan Fungsional
-## 3. Kebutuhan Non-Fungsional
-## 4. User Stories
-## 5. Alur Proses Sistem
-## 6. Desain Basis Data
-## 7. Daftar Modul / Tampilan
-## 8. Refleksi Penggunaan Gemini
+1. Analisis Masalah
+2. Kebutuhan Fungsional
+3. Kebutuhan Non-Fungsional
+4. User Stories
+5. Alur Proses Sistem
+6. Desain Basis Data
+7. Daftar Modul / Tampilan
+8. Refleksi Penggunaan Gemini
 
 ---
 
